@@ -49,18 +49,28 @@ rv2- Random variable 2, nondimensional**
 Where indicated, hourly data (then interpolated) from the nearest airport weather station (Chievres Airport, Belgium) was downloaded from a public data set from Reliable Prognosis, rp5.ru. Permission was obtained from Reliable Prognosis for the distribution of the 4.5 months of weather data.
 
 ** Problem Statement**
-For approximately 4.5 months, the data set is set to 10 minutes. A ZigBee wireless sensor network was used to monitor the house's temperature and humidity levels. Every wireless node reported the temperature and humidity levels every 3.3 minutes. The wireless data was then averaged over 10 minute periods. The energy data was recorded every 10 minutes using m-bus energy metres. Weather from the nearest airport weather station (Chievres Airport, Belgium) was collected from a public data set from Reliable Prognosis (rp5.ru) and blended with the experimental data sets using the date and time columns. Two random variables were included in the data set to test the regression models and to filter out non-predictive features (parameters).
+
+For approximately 4.5 months, the data set is set to 10 minutes. A ZigBee wireless sensor network was used to monitor the house's temperature and humidity levels. Every wireless node reported the temperature and humidity levels every 3.3 minutes. The wireless data was then averaged over 10 minute periods. The energy data was recorded every 10 minutes using m-bus energy metres. 
+
+Weather from the nearest airport weather station (Chievres Airport, Belgium) was collected from a public data set from Reliable Prognosis (rp5.ru) and blended with the experimental data sets using the date and time columns. Two random variables were included in the data set to test the regression models and to filter out non-predictive features (parameters).
+
 The problem statement is to create a machine learning model that can accurately forecast energy usage based on the supplied features. This might be valuable for building managers, energy firms, and policymakers who need to optimize energy consumption, cut costs, and minimize the environmental impact of energy usage.
+
 Specifically, the model should be able to reliably anticipate energy usage based on the different elements that influence energy consumption, such as temperature, humidity, illumination, and time of day. This can assist building managers and energy firms in identifying patterns and trends in energy consumption and making informed energy decisions, such as altering HVAC settings, optimizing lighting, or introducing energy-efficient solutions. Policymakers can also use this data to create regulations and incentives that encourage energy efficiency and sustainability.
 
 ** Approaches**
 
 This study seeks to forecast the energy usage of household appliances. With the emergence of smart homes and the growing demand for energy management, existing smart home systems can benefit from accurate predictions. If the energy usage of appliances can be forecasted for every potential condition, then device control can be optimized for energy savings as well. This is an example of Regression analysis, which is part of the Supervised Learning problem. The goal variable is appliance energy usage, and the characteristics are sensor data and weather data.
+
 We will get some insights from data visualisation after retrieving the information from the date column and analyzing it so that we can determine the aspects that will influence the output, such as energy consumption by appliances, which is a big issue and one of the most pressing concerns for the Green Economy.
 For reproductive analysis, we will break this endeavor into five parts.
+
 The first stage will be to analyze, clean up the dataset that was provided, and remove some extraneous columns.
+
 In the next step we will draw some insights after fetching the other details from date column like hourly, daily and monthly energy consumption. After that we will do Feature selection and Engineering. In FE we will be using VIF and correlation both method for Removing Multicollinearity and drop Some unnecessary column.
+
 Then we will split our data into train and test set after that we used some scaling techniques on train set and after that we prepare our data for feeding to our models for training and analyze the results of all models by comparing with each other. We will select best model among these and proceed with them further.
+
 In the final phase, we will tune the hyperparameters of our topmost model to see how it responds to different parameters. After we have determined the best parameters for our top models, we will use the feature importance approach to calculate the weightage of all features for our top model using ELi5.
 
 **Conclusion**
